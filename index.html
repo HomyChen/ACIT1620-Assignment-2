@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ACIT1620 Assignment 2 - Homy Chen A00999237</title>
+    </head>
+    
+    <style>
+        
+        body {
+            margin: 0;
+        }
+        
+        #add_button_loc {
+            position: absolute;
+            display: inline-block;
+            width: 30vw;
+            height: 100px;
+            margin: 0;
+        }
+        
+        #input_loc {
+            position: absolute;
+            display: inline-block;
+            width: 40vw;
+            height: 100px;
+            left: 30vw;
+            margin: 0;
+        }
+        
+        #clear_button_loc {
+            position: absolute;
+            display: inline-block;
+            width: 30vw;
+            height: 100px;
+            left: 70vw;
+            margin: 0;
+        }
+        
+        #message_loc {
+            position: absolute;
+            display:inline-block;
+            width: 100vw;
+            height: 80vh;
+            top: 100px;
+        }
+        
+        #add {
+            position: absolute;
+            top:25%;
+            left: 10%;
+            width: 60%;
+        }
+        
+        #clear {
+            position: absolute;
+            top: 25%;
+            left: 20%;
+            width: 60%;   
+        }
+        
+        .input {
+            position:absolute;
+            width: 100%;
+            display: inline-block;
+        }
+        
+        #input_name {
+            top: 15%;
+        }
+        
+        #input_img {
+            top: 40%;
+        }
+        
+        #input_msg {
+            top: 65%;
+        }
+        
+    </style>
+    
+    <body>
+        <div id='add_button_loc'>
+            <button id='add'><h1>Add Message</h1></button>
+        </div>
+        
+        <div id='input_loc'>
+            <input type='Text' placeholder="Enter Name" id='input_name' class='input' />
+            <input type='Text' placeholder="Enter Image Link" id='input_img' class='input' />
+            <input type='Text' placeholder="Enter Message" id='input_msg' class='input' />
+        
+        </div>
+        
+        <div id='clear_button_loc'>
+            <button id='clear'><h1>Clear All</h1></button>
+        </div>
+        
+        <div id='message_loc'>
+        
+        </div>
+    </body>
+    
+    <script>
+        var addBut = document.getElementById("add");
+        var clearBut = document.getElementById("clear");
+        var msgLoc = document.getElementById("message_loc");
+        
+        var nameInput = document.getElementById("input_name");
+        var imgInput = document.getElementById("input_img");
+        var msgInput = document.getElementById("input_msg");
+        
+        addBut.onclick = function(){
+            var newObj = document.createElement("div");
+            msgLoc.appendChild(newObj);                              
+            newObj.style.width = "auto";
+            newObj.style.height = "150px";
+            newObj.style.backgroundColor = "#FED";
+            newObj.style.position = "relative";
+            newObj.style.margin = '10px';
+            
+            var wordsLoc = document.createElement("div");
+            newObj.appendChild(wordsLoc);
+            wordsLoc.innerHTML = msgInput.value;
+            wordsLoc.style.width = "85%";
+            wordsLoc.style.height = "70%";
+            wordsLoc.style.backgroundColor = "white";
+            wordsLoc.style.position = "absolute";
+            wordsLoc.style.top = "25%";
+            wordsLoc.style.left = "14%";
+            
+            var nameLoc = document.createElement("h3");
+            newObj.appendChild(nameLoc);
+            nameLoc.innerHTML = nameInput.value;
+            nameLoc.style.width = "85%";
+            nameLoc.style.height = "20%";
+            nameLoc.style.top = "-6%";
+            nameLoc.style.left = "14%";
+            nameLoc.style.position = "absolute";
+            
+            var imgLoc = document.createElement("img");
+            newObj.appendChild(imgLoc);
+            imgLoc.src = imgInput.value;
+            imgLoc.style.position = "absolute";
+            imgLoc.style.width = "12%";
+            imgLoc.style.height = "90%";
+            imgLoc.style.left = "1%";
+            imgLoc.style.top = '5%';
+            
+        }
+        
+        clearBut.onclick = function(){
+            msgLoc.innerHTML = ''
+        }
+        
+        
+        
+    </script>
+</html>
