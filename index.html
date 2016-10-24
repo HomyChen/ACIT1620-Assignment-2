@@ -10,6 +10,7 @@
             margin: 0;
         }
         
+        
         #add_button_loc {
             position: absolute;
             display: inline-block;
@@ -76,6 +77,23 @@
             top: 65%;
         }
         
+        #created {
+            position:fixed;
+            bottom: -10%;
+            left: 40%;
+            width: 20%;
+            height: 10%;
+        }
+        
+        #cleared {
+            position:fixed;
+            bottom: -10%;
+            left: 40%;
+            width: 20%;
+            height: 10%;
+        }
+        
+        
     </style>
     
     <body>
@@ -84,7 +102,7 @@
         </div>
         
         <div id='input_loc'>
-            <input type='Text' placeholder="Enter Name" id='input_name' class='input' />
+            <input type='Text' placeholder="Enter Name/Subject" id='input_name' class='input' />
             <input type='Text' placeholder="Enter Image Link" id='input_img' class='input' />
             <input type='Text' placeholder="Enter Message" id='input_msg' class='input' />
         
@@ -97,16 +115,31 @@
         <div id='message_loc'>
         
         </div>
+        
+        
+        <div id='created'><h1>Created Item</h1>
+        
+        </div>
+        
+        <div id='cleared'><h1>Cleared Items</h1>
+        
+        </div>
+        
+        
     </body>
     
     <script>
         var addBut = document.getElementById("add");
         var clearBut = document.getElementById("clear");
         var msgLoc = document.getElementById("message_loc");
+        var created = document.getElementById("created");
+        var cleared = document.getElementById("cleared");
         
         var nameInput = document.getElementById("input_name");
         var imgInput = document.getElementById("input_img");
         var msgInput = document.getElementById("input_msg");
+        
+        
         
         addBut.onclick = function(){
             var newObj = document.createElement("div");
@@ -145,10 +178,15 @@
             imgLoc.style.left = "1%";
             imgLoc.style.top = '5%';
             
+            created.style.top = "90%";
+            cleared.style.top = "110%";
         }
         
         clearBut.onclick = function(){
             msgLoc.innerHTML = ''
+            
+            cleared.style.top = '90%';
+            created.style.top = "110%";
         }
         
         
