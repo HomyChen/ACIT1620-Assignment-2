@@ -95,6 +95,8 @@
             transition: up, 0.5s;
         }
         
+       
+        
         
     </style>
     
@@ -128,6 +130,8 @@
         </div>
         
         
+        
+        
     </body>
     
     <script>
@@ -136,6 +140,7 @@
         var msgLoc = document.getElementById("message_loc");
         var created = document.getElementById("created");
         var cleared = document.getElementById("cleared");
+        var invisible = document.getElementById("invisible");
         
         var nameInput = document.getElementById("input_name");
         var imgInput = document.getElementById("input_img");
@@ -180,15 +185,17 @@
             imgLoc.style.left = "1%";
             imgLoc.style.top = '5%';
             
-            created.style.top = "90%";
-            cleared.style.top = "110%";
+            created.style.bottom = "0%";
+            cleared.style.bottom = "-10%";
+            
         }
         
         clearBut.onclick = function(){
             msgLoc.innerHTML = ''
             
-            cleared.style.top = '90%';
-            created.style.top = "110%";
+            cleared.style.bottom = '0%';
+            created.style.bottom = "-10%";
+            
         }
         
         
